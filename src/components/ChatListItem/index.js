@@ -1,20 +1,21 @@
 import React, { Component } from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
 
-const ChatListItem = () => {
+const ChatListItem = ({ chat }) => {
     return (
         <View style={styles.container}>
-            <Image source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Bagan%2C_Burma.jpg/1024px-Bagan%2C_Burma.jpg' }}
+            <Image 
+                source={{ uri: chat.user.image }}
                 style={styles.image}
             />
             <View style={styles.content}>
             <View style={styles.row}>
-                    <Text numberOfLines={1} style= {styles.name}> Myanmar</Text>
-                    <Text style= {styles.subTitle}>5:00PM</Text>
+                    <Text numberOfLines={1} style= {styles.name}> {chat.user.name}</Text>
+                    <Text style= {styles.subTitle}>{chat.lastMessage.createdAd}</Text>
                 </View>
 
                 <Text numberOfLines={2}  style= {styles.subTitle}>
-                    Bagan is the present-day standard Burmese pronunciation of the Burmese word Pugan (ပုဂံ) 
+                   {chat.lastMessage.text}
                 </Text>
             </View>
         </View>
