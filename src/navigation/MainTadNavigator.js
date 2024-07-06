@@ -16,7 +16,7 @@ const MainTabNavigator = () => {
         tabBarStyle: { backgroundColor: "whitesmoke" },
         headerStyle: { backgroundColor: "whitesmoke" },
       }}
-    >
+    > 
       <Tab.Screen
         name="Status"
         component={NotImplementedScreen}
